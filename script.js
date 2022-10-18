@@ -1,75 +1,55 @@
 // reference https://simplestepscode.com/javascript-quiz-tutorial/#step1
 //First we have to make our questions and answers
 
-const questions = [
+let question1 = 
     {
         question: "Who has the most NBA championship rings of all time?",
-        answers: {
-            a:'Bill Russell',
-            b: 'Michael Jordan',
-            c: 'Kobe Bryant',
-            d: 'Kareem Abdul-Jabbar'
-        },
-        correctAns: 'a'
-    },
-    {
-        question: "What University did Lebron James play for",
-        answers: {
-            a:'Duke',
-            b: 'Ohio State',
-            c: 'Wake Forest',
-            d: 'none'
-        },
-        correctAns: 'd'
-    },
-    {
-        question: "How many continents are there in the world?",
-        answers: {
-            a:'5',
-            b: '7',
-            c: '29',
-            d: '1'
-        },
-        correctAns: 'b'
-    },
-    {
-        question: "What U.S bill has the face of Andrew Jackson?",
-        answers: {
-            a:'$1 bill',
-            b: '$2 bill',
-            c: '$20 bill',
-            d: '$10 bill'
-        },
-        correctAns: 'c'
-    },
-    {
-        question: "Which of the following cities is NOT a capital of a U.S state?",
-        answers: {
-            a:'Boston',
-            b: 'Lansing',
-            c: 'New York City',
-            d: 'Tallahassee'
-        },
-        correctAns: 'c'
+        answers: ['Bill Russell', 'Michael Jordan', 'Kobe Bryant', 'Kareem Abdul-Jabbar'],
+        correctAns:0
     }
+ let question2={
+        question: 'What University did Lebron James play for?',
+        answers: ['Duke', 'Ohio State', 'Wake Forest', 'none'],
+        correctAns: 3
+    }
+ let question3= {
+        question: "How many continents are there in the world?",
+        answers: ['5', '7', '29', '1'],
+        correctAns: 1
+    }
+ let question4= {
+        question: "What U.S bill has the face of Andrew Jackson?",
+        answers: ['$1 bill','$2 bill', '$20 bill', '$10 bill'],
+        correctAns: 2
+    }
+ let question5=   {
+        question: "Which of the following cities is NOT a capital of a U.S state?",
+        answers: [
+            'Boston',
+            'Lansing',
+            'New York City',
+             'Tallahassee'
+        ],
+        correctAns: 2
+    }
+let data = [
+    "Who has the most NBA championship rings of all time?",
+    "What University did Lebron James play for?",
+    "How many continents are there in the world?",
+    "What U.S bill has the face of Andrew Jackson?",
+    "Which of the following cities is NOT a capital of a U.S state?"
 ]
-
-const list = document.getElementById('quiz')
-
-let submitButton = document.getElementById('submit')
-
-questions.question.forEach((item)=>{
-let li= document.createElement("li")
-li.innerText = item
-list.appendChild(li)
-
-} ) 
-
-function showqs(){ 
-    
+ 
+// we have to show our questions in our browser using DOM manipulation and Query selector
+function showQuestion(q){ 
+    let questionsList = document.querySelector('.questions-list')
+    for (i=0; i< data.length; i++) {
+        let question= document.createElement("li")
+        text = data[i]
+        question.innerHTML = `${i +1 }. ${text}`
+        questionsList.appendChild(question)
+    }
+    let ans = document.querySelectorAll('.answer')
 }
-
-function rightAnswer(){
-    
-}
+showQuestion(question2)
 
